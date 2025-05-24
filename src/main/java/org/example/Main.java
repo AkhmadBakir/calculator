@@ -11,13 +11,16 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         String value = "";
 
-        while (!value.equals("quit")) {
+        while (true) {
 
             System.out.print("Введите значение выражения: ");
 
             value = scanner.nextLine();
 
-            if (value.matches("x[1-5] = .*")) {
+            if (value.equals("quit")) {
+                System.out.println("Завершение работы программы");
+                break;
+            } else if (value.matches("x[1-5] = .*")) {
                 calculator.setVariables(value);
             } else {
                 try {
